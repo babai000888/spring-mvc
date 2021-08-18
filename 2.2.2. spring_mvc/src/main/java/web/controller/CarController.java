@@ -16,9 +16,8 @@ import java.util.List;
 public class CarController {
 
     @GetMapping("/cars")
-    public String printCars(ModelMap model, @RequestParam("count") int count) {
+    public String printCars(ModelMap model, @RequestParam(defaultValue = "100") int count) {
         List<Car> carList = MainApp.getCars();
-        if(carList.size() < count) { count = carList.size(); }
         List<Car> cars = new CarService().getNcars(carList,count);
         model.addAttribute("cars",cars);
         return "cars";
