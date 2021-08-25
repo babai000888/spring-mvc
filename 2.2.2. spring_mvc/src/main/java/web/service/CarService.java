@@ -7,13 +7,18 @@ import java.util.List;
 
 public class CarService {
 
+    private static volatile List<Car> cars;
+
     public static List<Car> getCars() {
-        return  Arrays.asList(
-                new Car("Lada", 2101, 1965),
-                new Car("Ford", 999, 1950),
-                new Car("Fiat", 123, 2001),
-                new Car("Audi", 100, 1985),
-                new Car("BMW", 3, 1990));
+        if(cars == null) {
+            cars = Arrays.asList(
+                    new Car("Lada", 2101, 1965),
+                    new Car("Ford", 999, 1950),
+                    new Car("Fiat", 123, 2001),
+                    new Car("Audi", 100, 1985),
+                    new Car("BMW", 3, 1990));
+        }
+        return cars;
     }
 
     public List<Car> getNcars (int n) {
