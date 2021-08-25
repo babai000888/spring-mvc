@@ -16,8 +16,8 @@ public class CarService {
                 new Car("BMW", 3, 1990));
     }
 
-    public List<Car> getNcars (List<Car> carList, int n) {
-        if(carList.size() < n | n < 0 | n > 4) { n = carList.size(); }
-        return carList.subList(0,n);
+    public List<Car> getNcars (int n) {
+        if(getCars().size() < n | n < 0 | n > 4) { n = getCars().size(); }
+        return getCars().subList(0,n);
     }
 }

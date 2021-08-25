@@ -12,7 +12,7 @@ public class CarController {
 
     @GetMapping("/cars")
     public String printCars(ModelMap model, @RequestParam(defaultValue = "100") int count) {
-        model.addAttribute("cars",new CarService().getNcars(CarService.getCars(),count));
+        model.addAttribute("cars",new CarService().getNcars(count));
         return "cars";
     }
 }
