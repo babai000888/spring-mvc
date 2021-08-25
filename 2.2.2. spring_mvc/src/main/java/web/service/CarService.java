@@ -1,10 +1,13 @@
 package web.service;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import web.model.Car;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class CarService {
 
     private static volatile List<Car> cars;
